@@ -1,0 +1,6 @@
+projectKey=org.sonarqube:LOGLAS
+serverUrl=http://localhost:9000
+serverVersion=6.5.0.27846
+dashboardUrl=http://localhost:9000/dashboard/index/org.sonarqube:LOGLAS
+ceTaskId=AW_NIk4gDF6qdSTsWxqC
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AW_NIk4gDF6qdSTsWxqC

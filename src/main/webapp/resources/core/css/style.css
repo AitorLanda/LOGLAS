@@ -1,0 +1,482 @@
+:root {
+	/*--SHAPES--*/
+	--button-radius: 10px 10px 10px 10px;
+	--box-shadow: 0px 0px 7px 1px rgba(136,136,136,1);
+	--button-shadow: 0px 0px 10px 0px rgba(105, 88, 95, 1);
+	
+	/*--COLORS--*/
+	--black-dark: #222931;
+	--black-light: #393d46;
+	--cyan-pastel: #4ecda4;
+	--white-light: #f0edee;
+	
+	--purple-pastel: #c9b6e4;
+	
+	/*--FONTS--*/
+	
+	--font-simple: 'Tomorrow', sans-serif;
+	}
+
+#footer{
+	/*position:absolute;
+	bottom:0px;*/
+}
+
+* {
+	background-color: var(--black-dark);
+	
+	font-family: var(--font-simple);
+	color: var(--white-light);
+	
+}
+
+/*----------------------MAIN TEXT---------------------*/
+.big-text {
+	padding: 0.1rem;
+	text-align: left;
+	
+	font-family: var(--font-main);
+	color: var(--cyan-pastel);
+}
+
+.main-text {
+	padding: 0.1rem;
+	text-align: left;
+	
+	font-family: var(--font-simple);
+	color: var(--white-light);
+}
+/*----------------------END MAIN TEXT-----------------*/
+
+/*-----------------------BUTTON-----------------------*/
+.my-button {
+	padding: 0.4rem;	
+	border: none;
+	cursor: pointer;
+	transition: all 0.5s;
+}
+
+.my-button-text {	
+	padding: 0.4rem;
+	text-align: center;
+	font-family: var(--main-font);
+	
+	color: var(--white-light);
+	border-radius: var(--button-radius);
+	border: 2px solid var(--cyan-pastel);
+	box-shadow: var(--button-shadow);
+	
+	cursor: pointer;
+	transition: 0.5s;
+}
+
+.my-button-text.my-button-text-selected {	
+	padding: 0.4rem;
+	text-align: center;
+	font-family: var(--main-font);
+	
+	color: var(--white-light);
+	border-radius: var(--button-radius);
+	border: 2px solid var(--purple-pastel);
+	box-shadow: var(--button-shadow);
+	
+	cursor: pointer;
+	transition: 0.5s;
+}
+
+.my-button-text span {
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	transition: 0.5s;
+	background-color: transparent;
+}
+
+.my-button-text span:after {
+	content: '\00bb';
+	position: absolute;
+	opacity: 0;
+	top: 0;
+	right: -20px;
+	transition: 0.5s;
+}
+
+.my-button-text:hover span {
+	padding-right: 25px;
+}
+
+.my-button-text:hover span:after {
+	opacity: 1;
+	right: 0;
+}
+
+.mainButton {
+	background-color: transparent;
+}
+/*--------------------END BUTTON----------------------*/
+
+h1 {
+	text-align: center;
+	padding: 1rem;
+	color: var(--cyan-pastel);
+}
+
+h3#scoreboardTitle {
+	color: var(--purple-pastel);
+}
+
+#action-panel{
+	border-style:solid;
+	border-radius:15px 15px 15px 15px;
+	display:flex;
+	flex-direction: row;
+	justify-content:space-around;
+	padding:2em;
+}
+.my-draggable{
+	border-style:dotted;
+	border-radius:5px 5px 5px 5px;
+	padding: 1em;
+}
+
+#countdown{
+	font-size:2em;
+}
+#question{
+	font-size:2em;
+	color: var(--cyan-pastel);
+}
+#title {
+	font-size:2em;
+	color: var(--cyan-pastel);
+}
+.droppable{
+	border-style:solid;
+	height: 4em;
+	width:10em;
+	display: inline-block;
+	margin-left:2em;
+}
+
+#buttonEncap,#destinyEncap{
+	display:flex;
+	flex-direction:column;
+	justify-content:space-aorund;
+}
+#buttonEncap > div,#destinyEncap  > div{
+	margin:1em;
+}
+.container {
+	margin:0px;
+}
+/*userTable container*/
+#usertable{
+  display: block;
+  margin-left:10px;
+  margin-right: auto;
+  width: 100%;
+}
+table{
+	border: 2px;
+}
+/*loginForm*/
+#logg{
+  margin: auto;
+  width: 30%;
+}
+/*recoverForm*/
+#reco{
+  margin: auto;
+  width: 30%;
+  padding:10px;
+}
+/*registerForm*/
+#regis{
+  margin: auto;
+  width: 30%;
+  padding:10px;
+}
+/*lobbiesDshboard*/
+#lobDas{
+	margin: auto;
+  width: 90%;
+}
+/*GameDasboard*/
+#gameDas{
+	margin: auto;
+  width: 90%;
+}
+/*lobbyForm*/
+#lobForm{
+	margin: auto;
+  width: 30%;
+  padding:10px;
+}
+/*emailNotice*/
+#email{
+	margin: auto;
+  width: 50%;
+  padding:10px;
+}
+/*lobby*/
+#lobb{
+	margin: auto;
+  width: 50%;
+  padding:10px;
+}
+/*passChangeForm*/
+#passChan{
+	margin: auto;
+  width: 30%;
+  padding:10px;
+}
+/*questionForm*/
+#quesForm{
+	margin: auto;
+  	width: 30%;
+  	padding:10px;
+}
+
+/*questionTable*/
+#quesTable{
+	display: block;
+  margin-left:auto;
+  margin-right: auto;
+  width: 90%;
+}
+.droppableContainer{
+	display: inline-block;
+	
+	border-style: solid;
+	
+	border-radius:5px 5px 5px 5px;
+	padding: 0.5em;
+	
+}
+.droppableContainer > *{
+	display: inline-block;
+	text-align: center;
+	vertical-align: middle;
+}
+
+/*------------------------ INDEX ----------------------*/
+#indexContainer {
+	text-align: center;
+	padding: 2rem;
+}
+
+/*-----------------------------------------------------*/
+
+/*------------------ LOBBY DASHBOARD -----------------*/
+#createLobbyBtn {
+	text-align: center;
+	padding: 2rem;
+}
+
+/*-----------------------------------------------------*/
+
+/*---------------------- LOBBY INFO ------------------*/
+
+#lobbyContainer {
+	padding: 1rem;
+	
+	
+	/*grid-row-gap: 15px;
+		grid-template-columns: auto;
+		grid-template-rows: auto auto auto auto;
+		grid-template-areas: 
+    	"title"
+    	"chat"
+    	"left"
+    	"right";*/
+	
+	display: grid;
+  	grid-template-columns: 1fr 1fr 1fr;
+  	grid-template-rows: auto auto;
+  	grid-template-areas: 
+    	"exit title ."
+    	"left chat right";
+   
+   	grid-column-gap: 10px;
+  	grid-row-gap: 15px;
+}
+
+#leaveBtn {
+	grid-area: exit;
+}
+
+#lobbyTitle {
+	text-align: center;
+	
+	grid-area: title;
+}
+
+#lobby-left {
+	justify-self: start;
+	
+	grid-area: left;
+}
+#lobby-right {
+	justify-self: end;
+	
+	grid-area: right;
+}
+
+#chatMessages {
+	grid-area: chatMessages;
+}
+
+#chatInput {
+	grid-area: chatInput;
+}
+
+#sendBtn {
+	grid-area: sendBtn;
+}
+
+#chat {
+	padding: 0.5rem;
+	border-style:solid;
+	border-radius:10px 10px 10px 10px;
+	
+	display: grid;
+  	grid-template-columns: auto 35%;
+  	grid-template-rows: auto 30px;
+  	grid-template-areas: 
+    	"chatMessages chatMessages"
+    	"chatInput sendBtn";
+    	
+    grid-area: chat;
+}
+
+/*LARGE SCREENS*/
+@media (min-width: 100px) {
+	#lobbyContainer {
+		grid-template-columns: 1fr 1fr 1fr;
+	  	grid-template-rows: auto auto;
+	  	grid-template-areas: 
+	    	"exit title ."
+	    	"left chat right";
+	   
+	   	grid-column-gap: 10px;
+	  	grid-row-gap: 15px;
+	}
+}
+
+/*-----------------------------------------------------*/
+
+/*-----------------------QA GAMES----------------------*/
+#gameContainer {
+	padding: 1rem;
+	
+	display: grid;
+  	grid-template-columns: 3fr 1fr;
+  	grid-template-rows: auto auto auto;
+  	grid-template-areas: 
+    	"count score"
+    	"question score"
+    	"action score";
+   
+   	grid-column-gap: 10px;
+  	grid-row-gap: 15px;
+}
+
+#countdown {
+	text-align: center;
+	grid-area: count;
+}
+
+#question {
+	text-align: center;
+	grid-area: question;
+}
+
+#action-panel {
+	grid-area: action;
+}
+
+#score-board {
+	grid-area: score;
+}
+
+/*-----------------------------------------------------*/
+
+/*-----------------------USER STATS----------------------*/
+/*#gameContainer {
+	padding: 1rem;
+	
+	display: grid;
+  	grid-template-columns: 1fr 3fr;
+  	grid-template-rows: 50% 50%;
+  	grid-template-areas: 
+    	"one three"
+    	"two four";
+}*/
+
+#totalAverageGauge {
+	grid-area: one;
+}
+
+#playedGameTypeCountDonut {
+	height: 300px;
+	
+	grid-area: two;
+}
+
+#winLostGameTypeGauge {
+	/*display: flex;
+	justify-content: space-evenly;*/
+	grid-area: three;
+}
+#winLostGameTypeGauge > * {
+	flex-direction: row;
+}
+
+#totalScoreGameTypeCountBar {
+	height: 200px;
+	grid-area: four;
+}
+
+/*-----------------------------------------------------*/
+
+/*------------------------ C3 ------------------------*/
+/*GAUGE main label*/
+.c3-chart-arc .c3-gauge-value {
+    fill: var(--white-light);
+    font-size: 1rem;
+}
+/*GAUGE min label*/
+.c3-chart-arcs .c3-chart-arcs-gauge-min { 
+	fill: var(--white-light); 
+	font-size: 1rem;
+}
+/*GAUGE max label*/
+.c3-chart-arcs .c3-chart-arcs-gauge-max { 
+	fill: var(--white-light); 
+	font-size: 1rem;
+}
+/*DONUT main label*/
+.c3-chart-arcs text {
+    fill: var(--white-light);
+    font-size: 1rem;
+}
+/*LEGENDS*/
+.c3-legend-item text {
+	fill: var(--white-light);
+	font-size: 1rem;
+}
+/*X axis*/
+.c3-axis-x text {
+    fill: var(--white-light);
+    font-size: 1rem;
+}
+/*Y axis*/
+.c3-axis-y text {
+    fill: var(--white-light);
+    font-size: 1rem;
+}
+/*Chart lines*/
+path.domain { 
+	stroke: var(--white-light); 
+}
+/*----------------END C3 GAUGE -----------------------*/

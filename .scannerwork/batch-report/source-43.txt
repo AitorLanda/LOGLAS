@@ -1,0 +1,230 @@
+package edu.mondragon.object;
+
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+
+import edu.mondragon.playerscore.model.PlayerScore;
+
+public class UserStats {
+	
+	private List<PlayerScore> scoreList;
+	private double averageScore;
+	private int max;
+	private int min;
+	private Map<String, Integer> gameTypeCount;
+	private Map<String, Integer> gameTypeWinCount;
+	private Map<String, Integer> gameTypeTotalScoreCount;
+	
+	public UserStats(List<PlayerScore> scoreList) {
+		this.scoreList = scoreList;
+		calcMinMaxScores();
+		calcGameTypeCountMap();
+		calcGameTypeWinMap();
+		calcGameTypeTotalScoreMap();
+	}
+	
+	public List<PlayerScore> getScoreList() {
+		return scoreList;
+	}
+
+	public void setScoreList(List<PlayerScore> scoreList) {
+		this.scoreList = scoreList;
+	}
+
+	public double getAverageScore() {
+		return averageScore;
+	}
+
+	public void setAverageScore(double averageScore) {
+		this.averageScore = averageScore;
+	}
+
+	public int getMax() {
+		return max;
+	}
+
+	public void setMax(int max) {
+		this.max = max;
+	}
+
+	public int getMin() {
+		return min;
+	}
+
+	public void setMin(int min) {
+		this.min = min;
+	}
+
+	private void calcMinMaxScores() {
+		// Calc average
+		averageScore = 0;
+		if (!scoreList.isEmpty()) {
+			for (PlayerScore ps : scoreList) {
+				averageScore = averageScore + ps.getScore();
+			}
+		}
+		averageScore = averageScore / (double) scoreList.size();
+		// Calc min
+		Optional<PlayerScore> ops = scoreList.stream().min(Comparator.comparing(PlayerScore::getScore));
+		if(ops.isPresent()) {
+			PlayerScore ps = ops.get();
+			min = ps.getScore();
+			// Calc max
+			ops = scoreList.stream().max(Comparator.comparing(PlayerScore::getScore));
+			ps = ops.get();
+			max = ps.getScore();
+		}
+	}
+	
+	/**
+	 * @brief	Populate the map.
+	 * 			<GameId><count>
+	 * 			gameId : played game type id
+	 * 			count : count the number of played games
+	 */
+	private void calcGameTypeCountMap() {
+		gameTypeCount = new HashMap<>();
+		
+		// Get all game types played
+		List<Integer> gameIdList = loadGameTypes();
+		
+		// Iterate for all types and populate map
+		for (Integer id : gameIdList) {
+			int count = loadGameCountByGameId(id);
+			String gameName = getGameNameById(id);
+			gameTypeCount.put(gameName, count);
+		}
+	}
+	
+	/**
+	 * @brief	Rename the games by ID
+	 * @param 	gameId
+	 * @return 	count
+	 */
+	private String getGameNameById(int gameId) {
+		String name = "Unknown";
+		if (gameId == 1) {
+			name = "True/False";
+		} 
+		if (gameId == 2) {
+			name = "Multiple choice";
+		} 
+		if (gameId == 3) {
+			name = "Mixed";
+		}
+		if (gameId == 4) {
+			name = "Tetris";
+		}
+		return name;
+	}
+	
+	/**
+	 * @brief	Get the number of times the user played this type of Game
+	 * @param 	gameId
+	 * @return 	count
+	 */
+	private int loadGameCountByGameId(int gameId) {
+		int count = 0;
+		for (PlayerScore ps : scoreList) {
+			if (ps.getGameId() == gameId) {
+				count++;
+			}
+		}
+		return count;
+	}
+	
+	/**
+	 * @brief	Get the list of game types (list of gameId-s) without repeating
+	 * @param 	gameId
+	 * @return 	count
+	 */
+	private List<Integer> loadGameTypes() {
+		List<Integer> gameIdList = new ArrayList<>();
+		for (PlayerScore ps : scoreList) {
+			// If this gameId is not present in gameIdList then add it
+			if (!gameIdList.contains(ps.getGameId())) {
+				gameIdList.add(ps.getGameId()); 
+            } 
+		}
+		return gameIdList;
+	}
+	
+	/**
+	 * @brief	Populate the map.
+	 * 			<GameId><count>
+	 * 			gameId : played game type id
+	 * 			count : count the number of won games
+	 */
+	private void calcGameTypeWinMap() {
+		gameTypeWinCount = new HashMap<>();
+		
+		// Get all game types played
+		List<Integer> gameIdList = loadGameTypes();
+		
+		// Iterate for all types and populate map
+		for (Integer id : gameIdList) {
+			int count = loadWinCountByGameId(id);
+			String gameName = getGameNameById(id);
+			gameTypeWinCount.put(gameName, count);
+		}
+	}
+	
+	/**
+	 * @brief	Get the times it is won by gaame ID
+	 * @param 	gameId
+	 * @return 	won count
+	 */
+	private int loadWinCountByGameId(int gameId) {
+		int won = 0;
+		for (PlayerScore ps : scoreList) {
+			if (ps.getGameId() == gameId) {
+				if (ps.isWon()) {
+					won++;
+				}
+            } 
+		}
+		return won;
+	}
+	
+	/**
+	 * @brief	Populate the map.
+	 * 			<GameId><count>
+	 * 			gameId : played game type id
+	 * 			count : count the total acumulated score of played games
+	 */
+	private void calcGameTypeTotalScoreMap() {
+		gameTypeTotalScoreCount = new HashMap<>();
+		
+		// Get all game types played
+		List<Integer> gameIdList = loadGameTypes();
+		
+		// Iterate for all types and populate map
+		for (Integer id : gameIdList) {
+			int count = loadTotalScoreCountByGameId(id);
+			String gameName = getGameNameById(id);
+			gameTypeTotalScoreCount.put(gameName, count);
+		}
+	}
+	
+	/**
+	 * @brief	Get the times it is won by gaame ID
+	 * @param 	gameId
+	 * @return 	won count
+	 */
+	private int loadTotalScoreCountByGameId(int gameId) {
+		int total = 0;
+		for (PlayerScore ps : scoreList) {
+			if (ps.getGameId() == gameId) {
+				if (ps.isWon()) {
+					total = total + ps.getScore();
+				}
+            } 
+		}
+		return total;
+	}
+	
+}

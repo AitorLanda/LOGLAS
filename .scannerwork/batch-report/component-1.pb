@@ -1,0 +1,1 @@
+LOGLAS :	#-02479<J1.0Rorg.sonarqube:LOGLAS

@@ -1,0 +1,825 @@
+[
+  {
+    "id": 3,
+    "category": "History",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "Which one of these was not a beach landing site in the Invasion of Normandy?",
+    "correct_answer": "Silver",
+    "incorrect_answers": [ "Gold", "Juno", "Sword" ]
+  },
+  {
+    "id": 4,
+    "category": "Entertainment: Film",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "Which animated movie was first to feature a celebrity as a voice actor?",
+    "correct_answer": "Aladdin",
+    "incorrect_answers": [ "Toy Story", "James and the Giant Peach", "The Hunchback of Notre Dame" ]
+  },
+  {
+    "id": 5,
+    "category": "Entertainment: Music",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "In the  Rossini opera, what was the name of &#039;The Barber of Seville&#039;?",
+    "correct_answer": "Figaro",
+    "incorrect_answers": [ "Angelo", "Fernando", "Dave" ]
+  },
+  {
+    "id": 6,
+    "category": "Entertainment: Cartoon & Animations",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "What was the name of the sea witch in the 1989 Disney film &quot;The Little Mermaid&quot;?",
+    "correct_answer": "Ursula",
+    "incorrect_answers": [ "Madam Mim", "Maleficent", "Lady Tremaine" ]
+  },
+  {
+    "id": 7,
+    "category": "Entertainment: Japanese Anime & Manga",
+    "type": "boolean",
+    "difficulty": "easy",
+    "question": "Clefairy was intended to be Ash&#039;s starting Pok&eacute;mon in the pilot episode of the cartoon.",
+    "correct_answer": "True",
+    "incorrect_answers": [ "False" ]
+  },
+  {
+    "id": 8,
+    "category": "History",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "Who discovered Penicillin?",
+    "correct_answer": "Alexander Flemming",
+    "incorrect_answers": [ "Marie Curie", "Alfred Nobel", "Louis Pasteur" ]
+  },
+  {
+    "id": 9,
+    "category": "Geography",
+    "type": "boolean",
+    "difficulty": "easy",
+    "question": "Greenland is almost as big as Africa.",
+    "correct_answer": "False",
+    "incorrect_answers": [ "True" ]
+  },
+  {
+    "id": 10,
+    "category": "Entertainment: Video Games",
+    "type": "boolean",
+    "difficulty": "easy",
+    "question": "English new wave musician Gary Numan founded the video game development company Facepunch Studios in March 2009.",
+    "correct_answer": "False",
+    "incorrect_answers": [ "True" ]
+  },
+  {
+    "id": 11,
+    "category": "Entertainment: Film",
+    "type": "boolean",
+    "difficulty": "easy",
+    "question": "Leonardo DiCaprio won an Oscar for Best Actor in 2004&#039;s &quot;The Aviator&quot;.",
+    "correct_answer": "False",
+    "incorrect_answers": [ "True" ]
+  },
+  {
+    "id": 12,
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "Who made Garry&#039;s Mod?",
+    "correct_answer": "Garry Newman",
+    "incorrect_answers": [ "Randy Newman", "Facepunch Studios", "Gabe Newell" ]
+  },
+  {
+    "id": 13,
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "If a &quot;360 no-scope&quot; is one full rotation before shooting, how many rotations would a &quot;1080 no-scope&quot; be?",
+    "correct_answer": "3",
+    "incorrect_answers": [ "4", "2", "5" ]
+  },
+  {
+    "id": 14,
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "What was the first video game in the Batman &quot;Arkham&quot; series?",
+    "correct_answer": "Arkham Asylum",
+    "incorrect_answers": [ "Arkham Knight", "Arkham City", "Arkham Origins" ]
+  },
+  {
+    "id": 15,
+    "category": "History",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "Which of the following African countries was most successful in resisting colonization?",
+    "correct_answer": "Ethiopia",
+    "incorrect_answers": [ "C&ocirc;te d&rsquo;Ivoire", "Congo", "Namibia" ]
+  },
+  {
+    "id": 16,
+    "category": "Entertainment: Books",
+    "type": "boolean",
+    "difficulty": "easy",
+    "question": "The &quot;Berenstein Bears&quot; is the correct spelling of the educational children&#039;s book series&#039; name.",
+    "correct_answer": "False",
+    "incorrect_answers": [ "True" ]
+  },
+  {
+    "id": 17,
+    "category": "Geography",
+    "type": "boolean",
+    "difficulty": "easy",
+    "question": "There is a city called Rome in every continent on Earth.",
+    "correct_answer": "False",
+    "incorrect_answers": [ "True" ]
+  },
+  {
+    "id": 18,
+    "category": "Politics",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "The largest consumer market in 2015 was...",
+    "correct_answer": "The United States of America",
+    "incorrect_answers": [ "Germany", "Japan", "United Kingdom" ]
+  },
+  {
+    "id": 19,
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "Which eSports team came first place in The International Dota 2 Championship 2016?",
+    "correct_answer": "Wings Gaming",
+    "incorrect_answers": [ "Digital Chaos", "Evil Geniuses", "Fnatic" ]
+  },
+  {
+    "id": 20,
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "When was Minecraft first released to the public?",
+    "correct_answer": "May 17th, 2009",
+    "incorrect_answers": [ "September 17th, 2009", "November 18th, 2011", "October 7th, 2011" ]
+  },
+  {
+    "id": 21,
+    "category": "Entertainment: Japanese Anime & Manga",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "Who is the main character with yellow hair in the anime Naruto?",
+    "correct_answer": "Naruto",
+    "incorrect_answers": [ "Ten Ten", "Sasuke", "Kakashi" ]
+  },
+  {
+    "id": 22,
+    "category": "Entertainment: Music",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "In Mean Girls, who has breasts that tell when it&#039;s raining?",
+    "correct_answer": "Karen Smith",
+    "incorrect_answers": [ "Gretchen Weiners", "Janice Ian", "Cady Heron" ]
+  },
+  {
+    "id": 23,
+    "category": "General Knowledge",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "Five dollars is worth how many nickles?",
+    "correct_answer": "100",
+    "incorrect_answers": [ "50", "25", "69" ]
+  },
+  {
+    "id": 24,
+    "category": "Entertainment: Cartoon & Animations",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "Who created the Cartoon Network series &quot;Adventure Time&quot;?",
+    "correct_answer": "Pendleton Ward",
+    "incorrect_answers": [ "J. G. Quintel", "Ben Bocquelet", "Rebecca Sugar" ]
+  },
+  {
+    "id": 25,
+    "category": "Entertainment: Music",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "Which band released songs suchs as &quot;Rio&quot;, &quot;Girls on Film&quot;, and &quot;The Reflex&quot;?",
+    "correct_answer": "Duran Duran",
+    "incorrect_answers": [ "The Cure", "New Order", "Depeche Mode" ]
+  },
+  {
+    "id": 26,
+    "category": "Entertainment: Television",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "In the Star Trek universe, what color is Vulcan blood?",
+    "correct_answer": "Green",
+    "incorrect_answers": [ "Blue", "Red", "Purple" ]
+  },
+  {
+    "id": 27,
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "In Danganronpa: Trigger Happy Havoc, what is the protagonist&#039;s name?",
+    "correct_answer": "Makoto Naegi",
+    "incorrect_answers": [ "Hajime Hinata", "Nagito Komaeda", "Komaru Naegi" ]
+  },
+  {
+    "id": 28,
+    "category": "Science: Computers",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "In &quot;Hexadecimal&quot;, what color would be displayed from the color code? &quot;#00FF00&quot;?",
+    "correct_answer": "Green",
+    "incorrect_answers": [ "Red", "Blue", "Yellow" ]
+  },
+  {
+    "id": 29,
+    "category": "General Knowledge",
+    "type": "boolean",
+    "difficulty": "easy",
+    "question": "Adolf Hitler was born in Australia. ",
+    "correct_answer": "False",
+    "incorrect_answers": [ "True" ]
+  },
+  {
+    "id": 30,
+    "category": "Entertainment: Video Games",
+    "type": "boolean",
+    "difficulty": "easy",
+    "question": "In Sonic the Hedgehog universe, Tails&#039; real name is Miles Prower.",
+    "correct_answer": "True",
+    "incorrect_answers": [ "False" ]
+  },
+  {
+    "id": 31,
+    "category": "Science: Computers",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "Which computer language would you associate Django framework with?",
+    "correct_answer": "Python",
+    "incorrect_answers": [ "C#", "C++", "Java" ]
+  },
+  {
+    "id": 32,
+    "category": "Entertainment: Japanese Anime & Manga",
+    "type": "boolean",
+    "difficulty": "easy",
+    "question": "The name of the attack &quot;Kamehameha&quot; in Dragon Ball Z was named after a famous king of Hawaii.",
+    "correct_answer": "True",
+    "incorrect_answers": [ "False" ]
+  },
+  {
+    "id": 33,
+    "category": "Entertainment: Music",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "Which song on Daft Punk&#039;s &quot;Random Access Memories&quot; features Pharrell Williams?",
+    "correct_answer": "Get Lucky",
+    "incorrect_answers": [ "Doin&#039; It Right", "Instant Crush", "The Game of Love" ]
+  },
+  {
+    "id": 34,
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "In &quot;Mario &amp; Sonic at the Olympic Games&quot;, characters are split into how many types?",
+    "correct_answer": "4",
+    "incorrect_answers": [ "6", "5", "3" ]
+  },
+  {
+    "id": 35,
+    "category": "Entertainment: Video Games",
+    "type": "boolean",
+    "difficulty": "easy",
+    "question": "In RuneScape, one must complete the &quot;Dragon Slayer&quot; quest before equipping Rune Platelegs.",
+    "correct_answer": "False",
+    "incorrect_answers": [ "True" ]
+  },
+  {
+    "id": 36,
+    "category": "History",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "In 1939, Britain and France declared war on Germany after it invaded which country?",
+    "correct_answer": "Poland",
+    "incorrect_answers": [ "Czechoslovakia", "Austria", "Hungary" ]
+  },
+  {
+    "id": 37,
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "Aperture Science CEO Cave Johnson is voiced by which American actor?",
+    "correct_answer": "J.K. Simmons",
+    "incorrect_answers": [ "Nolan North", "John Patrick Lowrie", "Christopher Lloyd" ]
+  },
+  {
+    "id": 38,
+    "category": "History",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "Who was among those killed in the 2010 Smolensk, Russia plane crash tragedy?",
+    "correct_answer": "The Polish President",
+    "incorrect_answers": [ "Pope John Paul II", "Bang-Ding Ow", "Albert Putin" ]
+  },
+  {
+    "id": 39,
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "What household item make the characters of &quot;Steins; Gate&quot; travel through time?",
+    "correct_answer": "Microwave",
+    "incorrect_answers": [ "Computer", "Refrigerator", "Televison" ]
+  },
+  {
+    "id": 40,
+    "category": "History",
+    "type": "boolean",
+    "difficulty": "easy",
+    "question": "Kublai Khan is the grandchild of Genghis Khan?",
+    "correct_answer": "True",
+    "incorrect_answers": [ "False" ]
+  },
+  {
+    "id": 41,
+    "category": "Vehicles",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "The LS7 engine is how many cubic inches?",
+    "correct_answer": "427",
+    "incorrect_answers": [ "346", "364", "376" ]
+  },
+  {
+    "id": 42,
+    "category": "Entertainment: Japanese Anime & Manga",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "Which of the following originated as a manga?",
+    "correct_answer": "Akira",
+    "incorrect_answers": [ "Cowboy Bebop", "High School DxD", "Gurren Lagann" ]
+  },
+  {
+    "id": 43,
+    "category": "Entertainment: Cartoon & Animations",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "Which of these characters from &quot;SpongeBob SquarePants&quot; is not a squid?",
+    "correct_answer": "Gary",
+    "incorrect_answers": [ "Orvillie", "Squidward", "Squidette" ]
+  },
+  {
+    "id": 44,
+    "category": "Entertainment: Video Games",
+    "type": "boolean",
+    "difficulty": "easy",
+    "question": "&quot;Metal Gear Solid 3: Snake Eater&quot; was released in 2004.",
+    "correct_answer": "True",
+    "incorrect_answers": [ "False" ]
+  },
+  {
+    "id": 45,
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "What were the first two blocks in &quot;Minecraft&quot;?",
+    "correct_answer": "Grass and Cobblestone",
+    "incorrect_answers": [ "Grass and Stone", "Crafting Table and Cobblestone", "Cobblestone and Stone" ]
+  },
+  {
+    "id": 46,
+    "category": "Celebrities",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "Neil Hamburger is played by which comedian?",
+    "correct_answer": "Gregg Turkington",
+    "incorrect_answers": [ "Nathan Fielder", "Tim Heidecker", "Todd Glass" ]
+  },
+  {
+    "id": 47,
+    "category": "Science & Nature",
+    "type": "boolean",
+    "difficulty": "easy",
+    "question": "Psychology is the science of behavior and mind.",
+    "correct_answer": "True",
+    "incorrect_answers": [ "False" ]
+  },
+  {
+    "id": 48,
+    "category": "Entertainment: Comics",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "What is the full first name of the babysitter in Calvin and Hobbes?",
+    "correct_answer": "Rosalyn",
+    "incorrect_answers": [ "Rose", "Ruby", "Rachel" ]
+  },
+  {
+    "id": 49,
+    "category": "History",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "Which of the following was Brazil was a former colony under?",
+    "correct_answer": "Portugal",
+    "incorrect_answers": [ "Spain", "The Netherlands", "France" ]
+  },
+  {
+    "id": 50,
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "Which of the following is NOT one of the main characters in Grand Theft Auto V&rsquo;s story mode?",
+    "correct_answer": "Tommy Vercetti",
+    "incorrect_answers": [ "Michael de Santa", "Franklin Clinton", "Trevor Phillips" ]
+  },
+  {
+    "id": 51,
+    "category": "Math",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "5x5",
+    "correct_answer": "25",
+    "incorrect_answers": [ "20", "30", "5" ]
+  },
+  {
+    "id": 52,
+    "category": "Math",
+    "type": "boolean",
+    "difficulty": "easy",
+    "question": "5/5=5",
+    "correct_answer": "False",
+    "incorrect_answers": [ "True" ]
+  },
+  {
+    "id": 53,
+    "category": "Math",
+    "type": "boolean",
+    "difficulty": "easy",
+    "question": "1+1=2",
+    "correct_answer": "True",
+    "incorrect_answers": [ "False" ]
+  },
+  {
+    "id": 54,
+    "category": "Math",
+    "type": "boolean",
+    "difficulty": "easy",
+    "question": "3 + 3 x 6 =36",
+    "correct_answer": "False",
+    "incorrect_answers": [ "True" ]
+  },
+  {
+    "id": 55,
+    "category": "Math",
+    "type": "boolean",
+    "difficulty": "easy",
+    "question": "2+2=4",
+    "correct_answer": "True",
+    "incorrect_answers": [ "False" ]
+  },
+  {
+    "id": 57,
+    "category": "Math",
+    "type": "boolean",
+    "difficulty": "easy",
+    "question": "1/1=1",
+    "correct_answer": "True",
+    "incorrect_answers": [ "False" ]
+  },
+  {
+    "id": 58,
+    "category": "Math",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "5+5",
+    "correct_answer": "10",
+    "incorrect_answers": [ "25", "55", "5" ]
+  },
+  {
+    "id": 59,
+    "category": "Math",
+    "type": "boolean",
+    "difficulty": "easy",
+    "question": "6x6=36",
+    "correct_answer": "True",
+    "incorrect_answers": [ "False" ]
+  },
+  {
+    "id": 60,
+    "category": "Math",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "X + 3= 7",
+    "correct_answer": "X=4",
+    "incorrect_answers": [ "X=3", "X=2", "X=5" ]
+  },
+  {
+    "id": 61,
+    "category": "Math",
+    "type": "boolean",
+    "difficulty": "easy",
+    "question": "1x1=1",
+    "correct_answer": "True",
+    "incorrect_answers": [ "False" ]
+  },
+  {
+    "id": 62,
+    "category": "Geography",
+    "type": "sort",
+    "difficulty": "easy",
+    "question": "Which are the capitals of",
+    "correct_answer": "",
+    "incorrect_answers": [ "" ],
+    "answer_pairs": [
+      [ "France", "Paris" ],
+      [ "Spain", "Madrid" ],
+      [ "Australia", "Canberra" ],
+      [ "Japan", "Tokyo" ]
+    ]
+  },
+  {
+    "id": 63,
+    "category": "History",
+    "type": "sort",
+    "difficulty": "easy",
+    "question": "What year did this events happen?",
+    "correct_answer": "",
+    "incorrect_answers": [ "" ],
+    "answer_pairs": [
+      [ "World War I", "1914" ],
+      [ "Chernobyl's nuclear disaster", "1986" ],
+      [ "Attack to Twin Towers", "2011" ],
+      [ "World War II", "1936" ]
+    ]
+  },
+  {
+    "id": 64,
+    "category": "Entertainment: Videogames",
+    "type": "sort",
+    "difficulty": "easy",
+    "question": "Which videogame do this characters belong to?",
+    "correct_answer": "",
+    "incorrect_answers": [ "" ],
+    "answer_pairs": [
+      [ "Link", "The Legend of Zelda" ],
+      [ "Enderman", "Minecraft" ],
+      [ "Sylvanas", "World of Warcraft" ],
+      [ "Tracer", "Overwatch" ]
+    ]
+  },
+  {
+    "id": 65,
+    "category": "Entertainment: Movies",
+    "type": "sort",
+    "difficulty": "easy",
+    "question": "Which movie do this characters belong to?",
+    "correct_answer": "",
+    "incorrect_answers": [ "" ],
+    "answer_pairs": [
+      [ "Olaf", "Frozen" ],
+      [ "Merida", "Brave" ],
+      [ "Mushu", "Mulan" ],
+      [ "Chewbacca", "Star Wars" ]
+    ]
+  },
+  {
+    "id": 66,
+    "category": "Entertainment: Books",
+    "type": "sort",
+    "difficulty": "easy",
+    "question": "Who wrote this titles?",
+    "correct_answer": "",
+    "incorrect_answers": [ "" ],
+    "answer_pairs": [
+      [ "Hamlet", "William Shakespeare" ],
+      [ "Inferno", "Dante Alighieri" ],
+      [ "War and Peace", "Leo Tolstoy" ],
+      [ "Don Quijote", "Miguel de Cervantes" ]
+    ]
+  },
+  {
+    "id": 67,
+    "category": "Geography",
+    "type": "sort",
+    "difficulty": "easy",
+    "question": "Which continent do this countries belong to?",
+    "correct_answer": "",
+    "incorrect_answers": [ "" ],
+    "answer_pairs": [
+      [ "Minnesota", "America" ],
+      [ "India", "Asia" ],
+      [ "Italy", "Europe" ],
+      [ "Egypt", "Africa" ]
+    ]
+  },
+  {
+    "id": 68,
+    "category": "History",
+    "type": "sort",
+    "difficulty": "easy",
+    "question": "When did this events happen?",
+    "correct_answer": "",
+    "incorrect_answers": [ "" ],
+    "answer_pairs": [
+      [ "First man in the moon", "1969" ],
+      [ "Berlin wall fall", "1989" ],
+      [ "First tripulated flight", "1903" ],
+      [ "Industrial Revolution", "1660" ]
+    ]
+  },
+  {
+    "id": 69,
+    "category": "Entertainment: Videogames",
+    "type": "sort",
+    "difficulty": "easy",
+    "question": "Which company do this titles belong to?",
+    "correct_answer": "",
+    "incorrect_answers": [ "" ],
+    "answer_pairs": [
+      [ "Diablo", "Blizzard" ],
+      [ "Minecraft", "Mojang" ],
+      [ "The Sims", "EA" ],
+      [ "Dark Souls", "From Software" ]
+    ]
+  },
+  {
+    "id": 70,
+    "category": "Entertainment: Movies",
+    "type": "sort",
+    "difficulty": "easy",
+    "question": "Which movie do this characters belong to?",
+    "correct_answer": "",
+    "incorrect_answers": [ "" ],
+    "answer_pairs": [
+      [ "Bilbo Bolson", "The Hobbit" ],
+      [ "Jar Jar Binks", "Star Wars" ],
+      [ "Hermione", "Harry Potter" ],
+      [ "Mike Wazowsky", "Monsters INC." ]
+    ]
+  },
+  {
+    "id": 71,
+    "category": "Entertainment: Books",
+    "type": "sort",
+    "difficulty": "easy",
+    "question": "Who wrote this titles?",
+    "correct_answer": "",
+    "incorrect_answers": [ "" ],
+    "answer_pairs": [
+      [ "Da Vinci's Code", "Dan Brown" ],
+      [ "The Alchemist", "Paulo Coelho" ],
+      [ "The Dark Tower", "Stephen King" ],
+      [ "Alice in Wonderland", "Lewis Carroll" ]
+    ]
+  },
+  {
+    "id": 72,
+    "category": "Geography",
+    "type": "sort",
+    "difficulty": "easy",
+    "question": "Which are the capitals of",
+    "correct_answer": "",
+    "incorrect_answers": [ "" ],
+    "answer_pairs": [
+      [ "Italy", "Rome" ],
+      [ "Ukraine", "Kiev" ],
+      [ "Colombia", "Bogota" ],
+      [ "China", "Pekin" ]
+    ]
+  },
+  {
+    "id": 73,
+    "category": "History",
+    "type": "sort",
+    "difficulty": "easy",
+    "question": "What year did this events happen?",
+    "correct_answer": "",
+    "incorrect_answers": [ "" ],
+    "answer_pairs": [
+      [ "The Battle of Waterloo", "1815" ],
+      [ "American Revolutionary War", "1775" ],
+      [ "Printing press was invented", "1440" ],
+      [ "French Revolution started", "1789" ]
+    ]
+  },
+  {
+    "id": 74,
+    "category": "Entertainment: Videogames",
+    "type": "sort",
+    "difficulty": "easy",
+    "question": "Which videogame do this characters belong to?",
+    "correct_answer": "",
+    "incorrect_answers": [ "" ],
+    "answer_pairs": [
+      [ "Lara Croft", "Tomb Raider" ],
+      [ "GLaDOS", "Portal" ],
+      [ "Chun-Li", "Street Fighter" ],
+      [ "Geralt of Rivia", "The Witcher" ]
+    ]
+  },
+  {
+    "id": 75,
+    "category": "Entertainment: Movies",
+    "type": "sort",
+    "difficulty": "easy",
+    "question": "Which movie do this characters belong to?",
+    "correct_answer": "",
+    "incorrect_answers": [ "" ],
+    "answer_pairs": [
+      [ "Tony Stark", "Iron Man" ],
+      [ "Buzz Lightyear", "Toy Story" ],
+      [ "Groot", "Guardians of the Galaxy" ],
+      [ "Loki", "Thor" ]
+    ]
+  },
+  {
+    "id": 76,
+    "category": "Entertainment: Books",
+    "type": "sort",
+    "difficulty": "easy",
+    "question": "Who wrote this titles?",
+    "correct_answer": "",
+    "incorrect_answers": [ "" ],
+    "answer_pairs": [
+      [ "Robinson Crusoe", "Daniel Defoe" ],
+      [ "David Copperfield", "Charles Dickens" ],
+      [ "Anna Karenina", "Leo Tolstoy" ],
+      [ "1984", "George Orwell" ]
+    ]
+  },
+  {
+    "id": 77,
+    "category": "Geography",
+    "type": "sort",
+    "difficulty": "easy",
+    "question": "Which continent do this countries belong to?",
+    "correct_answer": "",
+    "incorrect_answers": [ "" ],
+    "answer_pairs": [
+      [ "California", "America" ],
+      [ "Thailand", "Asia" ],
+      [ "Norway", "Europe" ],
+      [ "Madagascar", "Africa" ]
+    ]
+  },
+  {
+    "id": 78,
+    "category": "History",
+    "type": "sort",
+    "difficulty": "easy",
+    "question": "When did this events happen?",
+    "correct_answer": "",
+    "incorrect_answers": [ "" ],
+    "answer_pairs": [
+      [ "Wall Street crash", "1929" ],
+      [ "Launch of Sputnik I", "1957" ],
+      [ "Cold War started", "1945" ],
+      [ "Launch of International Space Station", "1998" ]
+    ]
+  },
+  {
+    "id": 79,
+    "category": "Entertainment: Videogames",
+    "type": "sort",
+    "difficulty": "easy",
+    "question": "Which company do this titles belong to?",
+    "correct_answer": "",
+    "incorrect_answers": [ "" ],
+    "answer_pairs": [
+      [ "Pokemon", "Nintendo" ],
+      [ "Counter Strike", "Valve" ],
+      [ "Grand Theft Auto", "Rockstar" ],
+      [ "Assassin's Creed", "Ubisoft" ]
+    ]
+  },
+  {
+    "id": 80,
+    "category": "Entertainment: Movies",
+    "type": "sort",
+    "difficulty": "easy",
+    "question": "Which movie do this characters belong to?",
+    "correct_answer": "",
+    "incorrect_answers": [ "" ],
+    "answer_pairs": [
+      [ "Wolverine", "X-Men" ],
+      [ "Gollum", "The Lord of the Rings" ],
+      [ "Jack Sparrow", "Pirates of the Caribbean" ],
+      [ "Darth Vader", "Star Wars" ]
+    ]
+  },
+  {
+    "id": 81,
+    "category": "Entertainment: Books",
+    "type": "sort",
+    "difficulty": "easy",
+    "question": "Who wrote this titles?",
+    "correct_answer": "",
+    "incorrect_answers": [ "" ],
+    "answer_pairs": [
+      [ "Lord of the Flies", "William Golding" ],
+      [ "The Hunger Games", "Suzanne Collins" ],
+      [ "Divergent", "Veronica Roth" ],
+      [ "A Song of Ice and Fire", "George R. R. Martin" ]
+    ]
+  }
+
+]

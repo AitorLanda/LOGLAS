@@ -1,0 +1,59 @@
+
+Condition mutex;
+Condition cPlayer;
+Condition cViewer;
+
+int nViewers, nPlayers, nPlayersWaiting;
+boolean anyPlayer;
+
+void anadirPuntuacion(Player player){
+
+	cwait(mutex);
+	
+	nPlayersWaiting++;
+	while(nViewers>0 || anyPlayer) cwait(cPlayer);
+	
+	nPlayersWaiting--;
+	anyPlayer==true;
+	nPlayers++;
+	
+	if(cont==1) anadir(50);
+	if(cont==2) anadir(30);
+	if(cont==3) anadir(10);
+	
+	if(cont==7) cont=0;
+	
+	cnotify(mutex);
+}
+
+public void showScore() throws InterruptedException{
+	cwait(mutex);
+	
+	while(anyPlayer || numPlayersWaiting>0) cwait(cViewer);
+	
+	nViewers++;
+	
+	//printf
+	
+	cnotify(mutex);
+}
+	
+public void exitPlayer() {
+	cwait(mutex);
+	
+	anyPlayer=false;
+	
+	if(numPlayersWaiting>0) cnotify(cPlayer);
+	else cnotify(cViewer);
+	
+	cnotify(mutex);
+}
+
+public void exitViewer() {
+	cwait(mutex);
+	
+	numViewers--;
+	if(numViewers==0 && numPlayersWaiting>0) cnotify(cPlayer);
+	
+	cnotify(mutex);
+}

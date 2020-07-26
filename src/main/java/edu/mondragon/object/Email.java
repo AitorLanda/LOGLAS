@@ -1,0 +1,67 @@
+package edu.mondragon.object;
+
+import java.util.Properties;
+
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+/**
+ * @brief	Static class Email.
+ * 			Used to send an email to recover password
+ * @author 	Ander Olaso
+ *
+ */
+public class Email {
+	/**
+	 * @version v0.01
+	 * @brief  	Send email. 
+	 * @date	Creation: 01/17/20
+	 * @author 	Ander Olaso
+	 *
+	 */
+	
+	private Email() {
+		
+	}
+	
+	public static void sendEmail(String addressee , String subject, String text) {
+		Logger logger = LoggerFactory.getLogger(Email.class);
+	    // Esto es lo que va delante de @gmail.com en tu cuenta de correo. Es el remitente también.
+	    String emitter = "loglaspbl";  //Para la dirección nomcuenta@gmail.com
+	    
+	    Properties props = System.getProperties();
+	    props.put("mail.smtp.host", "smtp.gmail.com");  //El servidor SMTP de Google
+	    props.put("mail.smtp.user", emitter);
+	    props.put("mail.smtp.clave", "Loglas/05Popbl");    //La clave de la cuenta
+	    props.put("mail.smtp.auth", "true");    //Usar autenticación mediante usuario y clave
+	    props.put("mail.smtp.starttls.enable", "true"); //Para conectar de manera segura al servidor SMTP
+	    props.put("mail.smtp.port", "587"); //El puerto SMTP seguro de Google
+
+	    Session session = Session.getDefaultInstance(props);
+	    MimeMessage message = new MimeMessage(session);
+
+	    try {
+	        message.setFrom(new InternetAddress(emitter));
+	        message.addRecipient(Message.RecipientType.TO, new InternetAddress(addressee));   //Se podrían añadir varios de la misma manera
+	        message.setSubject(subject);
+	        message.setText(text);
+	        Transport transport = session.getTransport("smtp");
+	        transport.connect("smtp.gmail.com", emitter, "Loglas/05Popbl");
+	        transport.sendMessage(message, message.getAllRecipients());
+	        transport.close();
+	    }
+	    catch (MessagingException me) {
+	    	logger.error("An error has ocurred: ",me);
+	        me.printStackTrace();   //Si se produce un error
+	    }
+	}
+ 
+}
+

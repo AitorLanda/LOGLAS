@@ -1,0 +1,104 @@
+package edu.mondragon.object;
+
+import java.util.List;
+
+/**
+ * @brief	Question class POJO.
+ * 			For JSON object from questions file.
+ * @author 	Loredi
+ *
+ */
+public class Question {
+	
+	private int id;
+	private String category;
+	private String type;
+	private String difficulty;
+	private String question;
+	private String correct_answer;
+	private List<String> incorrect_answers;
+	private List<List<String>> answer_pairs;
+	
+	
+	public Question() {
+		super();
+	}
+	
+	public Question(String category, String type, String difficulty, String question, 
+			String correct_answer, List<String> incorrect_answers, List<List<String>> answer_pairs) {
+		this.category = category;
+		this.type = type;
+		this.difficulty = difficulty;
+		this.question=question;
+		this.correct_answer = correct_answer;
+		this.incorrect_answers = incorrect_answers;
+		this.answer_pairs = answer_pairs;
+
+	}
+
+	public List<List<String>> getAnswer_pairs() {
+		return answer_pairs;
+	}
+
+	public void setAnswer_pairs(List<List<String>> answer_pairs) {
+		this.answer_pairs = answer_pairs;
+	}
+
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getCategory() {
+		return category;
+	}
+	public void setCategory(String category) {
+		this.category = category;
+	}
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
+	public String getDifficulty() {
+		return difficulty;
+	}
+	public void setDifficulty(String difficulty) {
+		this.difficulty = difficulty;
+	}
+	public String getQuestion() {
+		return question;
+	}
+	public void setQuestion(String question) {
+		this.question = question;
+	}
+	public String getCorrect_answer() {
+		return correct_answer;
+	}
+	public void setCorrect_answer(String correct_answer) {
+		this.correct_answer = correct_answer;
+	}
+	public List<String> getIncorrect_answers() {
+		return incorrect_answers;
+	}
+	public void setIncorrect_answers(List<String> incorrect_answers) {
+		this.incorrect_answers = incorrect_answers;
+	}
+	@Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("\n----- ONE QUESTION -----\n");
+        sb.append("category: " + getCategory() + "\n");
+        sb.append("type: " + getType() + "\n");
+        sb.append("difficulty: " + getDifficulty() + "\n");
+        sb.append("question: " + getQuestion() + "\n");
+        sb.append("correct_answer: " + getCorrect_answer() + "\n");
+        sb.append("incorrect_answer: " + getIncorrect_answers() + "\n");
+        sb.append("answer_pairs: " + getAnswer_pairs() + "\n");
+        sb.append("*****************************");
+        return sb.toString();
+    }
+
+}

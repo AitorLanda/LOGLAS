@@ -1,0 +1,133 @@
+package edu.mondragon.controller;
+
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+import edu.mondragon.object.Question;
+import edu.mondragon.object.Questions;
+import edu.mondragon.user.model.User;
+import edu.mondragon.user.service.UserService;
+
+/**
+ * 
+ * @version v0.01
+ * @brief  	Admin Controller --- /admin/**
+ * @date	Creation: 12/10/19
+ * @author 	Loredi Altzibar
+ *
+ */
+
+@Controller
+@RequestMapping("/admin")
+public class AdminController {
+	
+	final static String QUESTIONTABLE_REDIRECT = "redirect:/admin/questionTable";
+	final static String USERTABLE_PAGE = "userTable";
+	final static String QUESTIONTABLE_PAGE = "questionTable";
+	final static String QUESTIONFORM_PAGE = "questionForm";
+	
+	@Autowired
+    private UserService userService;
+	
+	/**
+	 * @brief 	VIEW all registered user info
+	 * @param 	value: info
+	 * @return	ModelAndVew: includes pages-view and objects
+	 */
+	@RequestMapping(value = "/dashboard", method = RequestMethod.GET)
+	public ModelAndView goToAdminDashboard(ModelAndView model) {
+		List<User> userList = userService.listUsers();
+        model.addObject("userList", userList);
+        model.setViewName(USERTABLE_PAGE);
+        return model;
+	}
+	
+	/**
+	 * @brief 	VIEW all questions info
+	 * @param 	value: info
+	 * @return	ModelAndVew: includes pages-view and object
+	 */
+	@RequestMapping(value = "/questionTable", method = RequestMethod.GET)
+	public ModelAndView goToAdminquestion(ModelAndView model) {
+		List<Question> questionList = Questions.loadAllQuestions();
+        model.addObject("questionList", questionList);
+        model.setViewName(QUESTIONTABLE_PAGE);
+        return model;
+	}
+	
+	/**
+	 * @brief 	FORM for a new question
+	 * @param 	value: info
+	 * @return	ModelAndVew: includes pages-view and object
+	 */
+	@RequestMapping(value = "/questionForm", method = RequestMethod.GET)
+	public ModelAndView goToRegister(ModelAndView model) {
+		Question question = new Question();
+        model.addObject("question", question);
+        model.setViewName(QUESTIONFORM_PAGE);
+        return model;
+	}
+	
+	/**
+	 * @brief 	ADD new questions
+	 * @param 	value: info
+	 * @return	ModelAndVew: includes pages-view and object
+	 */
+	@RequestMapping(value = "/saveQuestion", method = RequestMethod.POST)
+	public ModelAndView addquestion(@ModelAttribute Question question,  HttpServletRequest request, ModelAndView model) {
+		List<Question> questionList = Questions.loadAllQuestions(); 
+		question.setType(request.getParameter("type"));
+		question.setDifficulty(request.getParameter("dif"));
+		boolean newQ = true;
+		for (Question q:questionList) {
+			if(q.getId()==question.getId()) {
+				newQ=false;
+			}
+		}
+		if (newQ) {
+			 questionList = Questions.addQuestion(question);
+		 }else{
+			 questionList = Questions.updateQuestion(question);
+		 }
+        model.addObject("questionList", questionList);
+        model.setViewName(QUESTIONTABLE_PAGE);
+        return model;
+	}
+	/**
+	 * @brief 	Edit question
+	 * @param 	value: info
+	 * @return	ModelAndVew: includes pages-view and object
+	 */
+	@RequestMapping(value = "/editQuestion", method = RequestMethod.GET)
+    public ModelAndView editQuestion(HttpServletRequest request, ModelAndView model) {
+        int questionId = Integer.parseInt(request.getParameter("id"));
+        List<Question> questionList = Questions.loadAllQuestions();
+        Question question = null;
+        for (Question q:questionList) {
+        	if(q.getId()==questionId) {
+        		question = q;
+        	}
+        }
+        //ModelAndView model = new ModelAndView("newQuestion");
+        model.addObject("question", question);
+        model.setViewName(QUESTIONFORM_PAGE);
+        return model;
+    }
+	@RequestMapping(value = "/deleteQuestion", method = RequestMethod.GET)
+    public ModelAndView deleteQuestion(HttpServletRequest request, ModelAndView model) {
+        int questionId = Integer.parseInt(request.getParameter("id"));
+        List<Question> questionList = Questions.deleteQuestion(questionId);
+        model.addObject("questionList", questionList);
+        model.setViewName(QUESTIONTABLE_PAGE);
+        return model;
+    }
+
+}

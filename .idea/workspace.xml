@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="773574e1-8679-4ea9-8ad8-38c757d6001f" name="Default Changelist" comment="Spring Security implemented">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjrt_1_9_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_commons_2_1_12_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_jpa_2_2_3_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/POPBL5_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/POPBL5_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/POPBL5.iml" beforeDir="false" afterPath="$PROJECT_DIR$/POPBL5.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/mondragon/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/mondragon/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/mondragon/user/dao/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/mondragon/user/service/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/mondragon/user/service/MyUserDetailsServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/mondragon/user/service/MyUserDetailsServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/maven/edu.mondragon/POPBL5/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/maven/edu.mondragon/POPBL5/pom.properties" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1W6W4XfEQcRA3ZMOJM6fknpiOqx" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RunManager">
+    <configuration name="All in POPBL5" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="POPBL5" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.All in POPBL5" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SpringBeansView">
+    <option name="beanDetailsProportion" value="0.3" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="773574e1-8679-4ea9-8ad8-38c757d6001f" name="Default Changelist" comment="" />
+      <created>1578470334352</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1578470334352</updated>
+      <workItem from="1578470337778" duration="897000" />
+      <workItem from="1578471457409" duration="7112000" />
+      <workItem from="1578552566970" duration="2003000" />
+      <workItem from="1578558301523" duration="6534000" />
+      <workItem from="1578652694102" duration="526000" />
+    </task>
+    <task id="LOCAL-00001" summary="Configuring basic Spring Security:&#10;- Authentication and authorization config.">
+      <created>1578472490538</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1578472490538</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Configuring basic Spring Security:&#10;- UserDetailsService and UserDetails implemented.">
+      <created>1578553489756</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1578553489756</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Configuring basic Spring Security:&#10;- Authentication and authorization config." />
+    <MESSAGE value="Configuring basic Spring Security:&#10;- UserDetailsService and UserDetails implemented." />
+    <option name="LAST_COMMIT_MESSAGE" value="Configuring basic Spring Security:&#10;- UserDetailsService and UserDetails implemented." />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="361" y="92" key="#Assign_Data_Sources" timestamp="1578560707569">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="361" y="92" key="#Assign_Data_Sources/0.0.1536.864@0.0.1536.864" timestamp="1578560707569" />
+    <state x="574" y="143" key="#com.intellij.ide.util.MemberChooser" timestamp="1578564740253">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="574" y="143" key="#com.intellij.ide.util.MemberChooser/0.0.1536.864@0.0.1536.864" timestamp="1578564740253" />
+    <state x="448" y="6" key="CommitChangelistDialog2" timestamp="1578566767560">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="448" y="6" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1578566767560" />
+    <state x="299" y="88" key="Maven.ArtifactSearchDialog" timestamp="1578566605804">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="299" y="88" key="Maven.ArtifactSearchDialog/0.0.1536.864@0.0.1536.864" timestamp="1578566605804" />
+    <state x="277" y="76" key="SettingsEditor" timestamp="1578652952388">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="277" y="76" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1578652952388" />
+    <state x="722" y="155" key="Vcs.Push.Dialog.v2" timestamp="1578553504615">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="722" y="155" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1578553504615" />
+    <state x="425" y="197" width="672" height="677" key="run.anything.popup" timestamp="1578560460220">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="425" y="197" width="672" height="677" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1578560460220" />
+  </component>
+</project>

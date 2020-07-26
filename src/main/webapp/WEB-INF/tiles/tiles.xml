@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+
+<tiles-definitions>
+	 
+    <definition name="base-template" template="/WEB-INF/templates/template.jsp">
+        <put-attribute name="title" value="Tiles Integration" />
+        <put-attribute name="header" value="/WEB-INF/templates/header.jsp" />
+        <put-attribute name="content" value="" />
+        <put-attribute name="footer" value="/WEB-INF/templates/footer.jsp" />
+    </definition>
+    
+    
+    <definition name="index-template" template="/WEB-INF/templates/templateIndex.jsp">
+    	<put-attribute name="title" value="Welcome to LOGLAS!!"></put-attribute>
+    	<put-attribute name="header" value="/WEB-INF/templates/headerIndex.jsp"></put-attribute>
+    	<put-attribute name="content" value=""></put-attribute>
+    	<put-attribute name="footer" value="/WEB-INF/templates/footer.jsp"></put-attribute></definition>
+    <definition name="index" extends="index-template">
+        <put-attribute name="title" value="LOGLAS" />
+        <put-attribute name="content" value="/WEB-INF/views/index.jsp" />
+    </definition>
+    
+    <definition name="recoverForm" extends="base-template">
+        <put-attribute name="title" value="Email sender" />
+        <put-attribute name="content" value="/WEB-INF/views/recoverForm.jsp" />
+    </definition>
+    <definition name="passChangeForm" extends="base-template">
+        <put-attribute name="title" value="Password Change Form" />
+        <put-attribute name="content" value="/WEB-INF/views/passChangeForm.jsp" />
+    </definition>
+    <definition name="emailNotice" extends="base-template">
+        <put-attribute name="title" value="Email notice" />
+        <put-attribute name="content" value="/WEB-INF/views/emailNotice.jsp" />
+    </definition>
+    
+    <definition name="loginForm" extends="base-template">
+        <put-attribute name="title" value="Login" />
+        <put-attribute name="content" value="/WEB-INF/views/loginForm.jsp" />
+    </definition>
+    <definition name="registerForm" extends="base-template">
+        <put-attribute name="title" value="Register" />
+        <put-attribute name="content" value="/WEB-INF/views/registerForm.jsp" />
+    </definition>
+    <definition name="userInfo" extends="base-template">
+        <put-attribute name="title" value="Session info" />
+        <put-attribute name="content" value="/WEB-INF/views/userInfo.jsp" />
+    </definition>
+    <definition name="userTable" extends="base-template">
+        <put-attribute name="title" value="User Table" />
+        <put-attribute name="content" value="/WEB-INF/views/userTable.jsp" />
+    </definition>
+    
+    <definition name="gamesDashboard" extends="base-template">
+        <put-attribute name="title" value="Games Dashboard" />
+        <put-attribute name="content" value="/WEB-INF/views/gamesDashboard.jsp" />
+    </definition>
+    
+    <definition name="lobbiesDashboard" extends="base-template">
+        <put-attribute name="title" value="Games Dashboard" />
+        <put-attribute name="content" value="/WEB-INF/views/lobbiesDashboard.jsp" />
+    </definition>
+    <definition name="lobby" extends="base-template">
+        <put-attribute name="title" value="Lobby" />
+        <put-attribute name="content" value="/WEB-INF/views/lobby.jsp" />
+    </definition>
+    
+    <definition name="lobbyForm" extends="base-template">
+        <put-attribute name="title" value="New lobby" />
+        <put-attribute name="content" value="/WEB-INF/views/lobbyForm.jsp" />
+    </definition>
+    <definition name="lobbyInfo" extends="base-template">
+        <put-attribute name="title" value="Lobby info" />
+        <put-attribute name="content" value="/WEB-INF/views/lobbyInfo.jsp" />
+    </definition>
+    
+    <definition name="qaGame" extends="base-template">
+        <put-attribute name="title" value="QA Game" />
+        <put-attribute name="content" value="/WEB-INF/views/qaGame.jsp" />
+    </definition>
+    <definition name="qaGameView" extends="base-template">
+        <put-attribute name="title" value="QA Game for Viewers" />
+        <put-attribute name="content" value="/WEB-INF/views/qaGameView.jsp" />
+    </definition>
+    <definition name="tetrisGame" extends="base-template">
+        <put-attribute name="title" value="Tetris Game" />
+        <put-attribute name="content" value="/WEB-INF/views/tetrisGame.jsp" />
+    </definition>
+    
+    
+    <definition name="questionTable" extends="base-template">
+        <put-attribute name="title" value="Questions Table" />
+        <put-attribute name="content" value="/WEB-INF/views/questionTable.jsp" />
+    </definition>
+    
+    <definition name="questionForm" extends="base-template">
+        <put-attribute name="title" value="New question" />
+        <put-attribute name="content" value="/WEB-INF/views/questionForm.jsp" />
+    </definition>
+    
+    <definition name="dragGame" extends="base-template">
+        <put-attribute name="title" value="Drag and Drop Game" />
+        <put-attribute name="content" value="/WEB-INF/views/dragGame.jsp" />
+    </definition>
+    
+</tiles-definitions>

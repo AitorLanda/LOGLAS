@@ -1,0 +1,310 @@
+package edu.mondragon.controller;
+
+import java.time.ZonedDateTime;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttribute;
+import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.servlet.ModelAndView;
+
+import edu.mondragon.lobby.model.Lobby;
+import edu.mondragon.lobby.service.LobbyService;
+import edu.mondragon.lobbyregtime.model.LobbyRegtime;
+import edu.mondragon.lobbyregtime.service.LobbyRegtimeService;
+import edu.mondragon.object.Container;
+import edu.mondragon.object.Game;
+import edu.mondragon.playerscore.model.PlayerScore;
+import edu.mondragon.playerscore.service.PlayerScoreService;
+import edu.mondragon.user.model.User;
+
+/**
+ * 
+ * @version v0.01
+ * @brief  	Lobby Controller --- /lobby/**
+ * @date	Creation: 12/10/19
+ * @author 	Loredi Altzibar
+ *
+ */
+
+@Controller
+@RequestMapping("/lobby")
+@SessionAttributes("game")
+public class LobbyController {
+	
+	final static String LOBBY = "lobby";
+	final static String CONTAINER = "container";
+	
+	final static String LOGIN_REDIRECT = "redirect:/login";
+	
+	@Autowired
+    private LobbyService lobbyService;
+	
+	@Autowired
+    private PlayerScoreService playerScoreService;
+	
+	@Autowired
+	private LobbyRegtimeService lobbyRegtimeService;
+	
+	/**
+	 * @brief Add game in model attribute
+	 */
+	@ModelAttribute("game")
+	public Game setUpGameAttribute() {
+		return new Game();
+	}
+	
+	
+	/**
+	 * @brief 	VIEW all lobbies from a game
+	 * 			1. Get the game from the page by gameId
+	 * 			2. Load gameLobbies list from application scope in order to visualize by gameId
+	 * @param 	value: info
+	 * @return	ModelAndVew: includes pages-view and objects
+	 */
+	@RequestMapping(value = "/dashboard", method = RequestMethod.GET)
+	public ModelAndView goToLobbies(@ModelAttribute("game") Game game, HttpServletRequest request) {
+		String url = LOGIN_REDIRECT;
+		ModelAndView newModel = new ModelAndView(url);
+		
+		// Check if user is logged in ---------------------- CHANGE THIS STRUCTURE?
+		HttpSession session = request.getSession();
+		if (session.getAttribute("user") == null || session.getAttribute("user").equals("")) {
+			// LOGIN REDIRECT
+			url = LOGIN_REDIRECT;
+		} else {
+			// Retrieve game id in order to visualize different lobbies inside that game
+			int gameId = Integer.parseInt(request.getParameter("id"));
+			String title = game.getTitle(gameId);
+			game.setTitle(title);
+			game.setId(gameId);
+			newModel.addObject("gameId", gameId);
+			newModel.addObject("game", game);
+			url = "lobbiesDashboard";
+		}
+		newModel.setViewName(url);
+        return newModel;
+	}
+	
+	/**
+	 * @brief 	VIEW lobby form
+	 * 			Creates new lobby object to be able to fill in from the page
+	 * @param 	value: new
+	 * @return	ModelAndView
+	 */
+	@RequestMapping(value = "/new", method = RequestMethod.GET)
+	public ModelAndView goToLobbyForm(HttpServletRequest request, ModelAndView model) {
+		// I create a new empty lobby so I can work with it in the form and fill it down
+		Lobby lobby = new Lobby();
+        model.addObject(LOBBY, lobby);
+        model.setViewName("lobbyForm");
+        return model;
+	}
+	
+	
+	
+	/**
+	 * @brief 	ACTION save lobby
+	 * 			1. Get actual user from session
+	 * 			2. Finish setting up lobby object and insert to the DB
+	 * 			3. Add new lobby group to application context
+	 * @param 	value: save
+	 * @return	ModelAndView
+	 */
+	@RequestMapping(value = "/save", method = RequestMethod.POST)
+    public ModelAndView saveLobby(@SessionAttribute Game game, @ModelAttribute Lobby lobby, HttpServletRequest request, 
+    		ModelAndView model) {
+		User user = (User) request.getSession().getAttribute("user");
+		lobby.setUserId(user.getId());
+    	lobby.setGameId(game.getId());
+        lobbyService.addLobby(lobby);
+        
+        // add the new lobby to application scope
+        Container container = (Container) request.getSession().getServletContext().getAttribute(CONTAINER);
+		container.createNewLobbyGroup(user, lobby.getTitle(), lobby.getId(), game.getId(), lobby.getPlayerLimit());
+        request.getSession().getServletContext().setAttribute(CONTAINER, container);
+        
+        // Create new Model and View with redirection to lobby info
+        String url = "redirect:/lobby/info?id=" + lobby.getId();
+        ModelAndView newModel = new ModelAndView(url);
+        
+        newModel.addObject(LOBBY, lobby);
+        newModel.addObject("user", user);
+        request.getSession().setAttribute("lobbyId", lobby.getId());
+        return newModel;
+    }
+	
+	/**
+	 * @brief 	ACTION delete lobby
+	 * 			1. Get actual user from session
+	 * 			2. Remove this user from lobbyGroup list and save the changes to application context
+	 * @param 	value: delete
+	 * @return	ModelAndView
+	 */
+	@RequestMapping(value = "/leave", method = RequestMethod.GET)
+    public ModelAndView deleteLobby(@SessionAttribute Game game, HttpServletRequest request, ModelAndView model) {
+		// Retrieve game id
+		int gameId = game.getId();
+		
+		// Retrieve user info
+        int lobbyId = Integer.parseInt(request.getParameter("id"));
+        User user = (User) request.getSession().getAttribute("user");
+        
+        // Use the application scope attribute to manage lobbies (PLAYER LEAVES)
+        Container container = (Container) request.getSession().getServletContext().getAttribute(CONTAINER);
+        int count = container.getLobbyGroupByLobbyId(lobbyId).getCount() - 1;
+        container.playerLeaves(user, lobbyId);
+        request.getSession().getServletContext().setAttribute(CONTAINER, container);
+        
+        // Update database lobby player COUNT
+        Lobby lobby = lobbyService.getLobby(lobbyId);
+        lobby.setPlayerCount(count);
+        lobbyService.updateLobbyPlayerCount(lobby);
+        
+        // Update database with the new register
+        LobbyRegtime regtime = new LobbyRegtime(lobbyId, count);
+        lobbyRegtimeService.addRegtime(regtime);
+        
+        String url = "redirect:/lobby/dashboard?id=" + gameId;
+		return new ModelAndView(url);
+    }
+	
+	/**
+	 * @brief 	VIEW lobby info
+	 * 			1. Get actual user and current lobby for mere visualization in the page
+	 * 			2. Add the current user to the lobbyGroup and save changes to application scope
+	 * @param 	value: info
+	 * @return	ModelAndView
+	 */
+	@RequestMapping(value = "/info", method = RequestMethod.GET)
+	public ModelAndView goToLobbyRequest(HttpServletRequest request, ModelAndView model, HttpServletResponse response) {
+		int lobbyId = Integer.parseInt(request.getParameter("id"));
+		
+		// Retrieve the lobby to visualize lobby info
+		Lobby lobby = lobbyService.getLobby(lobbyId);	
+		// Retrieve user in session in order to visualize user info
+		User user = (User) request.getSession().getAttribute("user");
+		
+		// Use the application scope attribute to manage lobbies
+		Container container = (Container) request.getSession().getServletContext().getAttribute(CONTAINER);
+		container.playerJoins(user, lobbyId);
+        request.getSession().getServletContext().setAttribute(CONTAINER, container);
+		
+        // Update lobby player COUNT from database group
+        int count = container.getLobbyGroupByLobbyId(lobbyId).getCount();
+        lobby.setPlayerCount(count);
+        
+        // Update database with the new register
+        LobbyRegtime regtime = new LobbyRegtime(lobbyId, count);
+        lobbyService.updateLobbyPlayerCount(lobby);
+        lobbyRegtimeService.addRegtime(regtime);
+		model.addObject(LOBBY, lobby);
+		model.addObject("user", user);
+        model.setViewName("lobbyInfo");
+        request.getSession().setAttribute("lobbyId", lobbyId);
+        
+        return model;
+	}
+	
+	/**
+	 * @brief 	VIEW lobby view
+	 * 			1. Get actual user and current lobby for mere visualization in the page
+	 * 			2. Add the current user to the lobbyGroup and save changes to application scope
+	 * @param 	value: info
+	 * @return	ModelAndView
+	 */
+	@RequestMapping(value = "/view", method = RequestMethod.GET)
+	public ModelAndView goToLobbyView(HttpServletRequest request, ModelAndView model, HttpServletResponse response) {
+		int lobbyId = Integer.parseInt(request.getParameter("id"));
+		
+		// Retrieve the lobby to visualize lobby info
+		Lobby lobby = lobbyService.getLobby(lobbyId);	
+		// Retrieve user in session in order to visualize user info
+		User user = (User) request.getSession().getAttribute("user");
+		
+		model.addObject(LOBBY, lobby);
+		model.addObject("user", user);
+		
+        model.setViewName("qaGameView");
+        request.getSession().setAttribute("lobbyId", lobbyId);
+        
+        return model;
+	}
+	
+	//---------------------------------------------------------------------
+	
+	/**
+	 * @brief	Set score database GAME QA (TRUE / FALSE and QUESTION / ANSWER)
+	 * @return	ModelAndView
+	 */
+	@RequestMapping(value = "/qaScore", method = RequestMethod.GET)
+	public ModelAndView setScore(@SessionAttribute Game game, HttpServletRequest request, ModelAndView model) {
+		int lobbyId = Integer.parseInt(request.getParameter("id"));
+		// Retrieve user in session in order to visualize user info
+		User user = (User) request.getSession().getAttribute("user");
+		
+		// Use the application scope attribute to manage lobbies
+		Container container = (Container) request.getSession().getServletContext().getAttribute(CONTAINER);
+		
+		// Update database player score
+        int score = container.getLobbyGroupByLobbyId(lobbyId).getPlayerInfoByUserId(user.getId()).getScore();
+        boolean won = container.isWinnerByUserId(lobbyId, user.getId());
+        PlayerScore playerScore = new PlayerScore(game.getId(), lobbyId, user.getId(), score, won);
+        playerScoreService.savePlayerScore(playerScore);
+        
+        // Update database game finish date in lobby
+     	ZonedDateTime gameFinishDate = ZonedDateTime.now();
+     	// Retrieve the lobby to visualize lobby info
+     	Lobby lobby = lobbyService.getLobby(lobbyId);
+     	lobby.setFinishDate(gameFinishDate);
+     	lobbyService.updateLobbyFinishDate(lobby);
+		
+		String url = "redirect:/lobby/leave?id=" + lobbyId;
+		return new ModelAndView(url);
+	}
+	
+	/**
+	 * @brief	VIEW GAME (Tetris)
+	 * @return	ModelAndView
+	 */
+	@RequestMapping(value = "/game", method = RequestMethod.GET)
+	public ModelAndView goToGame(HttpServletRequest request, ModelAndView model) {
+		int lobbyId = Integer.parseInt(request.getParameter("id"));
+		// Retrieve the lobby to visualize lobby info
+		Lobby lobby = lobbyService.getLobby(lobbyId);
+		// Retrieve user in session in order to visualize user info
+		User user = (User) request.getSession().getAttribute("user");
+		
+		// Use the application scope attribute to manage lobbies
+		Container container = (Container) request.getSession().getServletContext().getAttribute(CONTAINER);
+		container.setGameOver(false); // Init game
+		container.setUserId(0);
+		container.setGameState(null);
+		request.getSession().getServletContext().setAttribute(CONTAINER, container);
+		
+		// Update database game start date in lobby
+		ZonedDateTime gameStartDate = ZonedDateTime.now();
+		lobby.setStartDate(gameStartDate);
+		lobbyService.updateLobbyStartDate(lobby);
+		
+		model.addObject(LOBBY, lobby);
+		model.addObject("user", user);
+		
+		int gameId = lobby.getGameId();
+		if (gameId == 4) {
+			 model.setViewName("dragGame");
+		} else if (gameId == 5) {
+			model.setViewName("tetrisGame");
+		} else model.setViewName("qaGame");
+        
+        return model;
+	}
+
+}

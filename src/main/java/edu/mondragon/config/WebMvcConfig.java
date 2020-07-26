@@ -1,0 +1,95 @@
+package edu.mondragon.config;
+
+import java.util.Locale;
+
+import org.springframework.context.MessageSource;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.support.ReloadableResourceBundleMessageSource;
+import org.springframework.web.servlet.LocaleResolver;
+import org.springframework.web.servlet.ViewResolver;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
+import org.springframework.web.servlet.i18n.SessionLocaleResolver;
+import org.springframework.web.servlet.view.tiles3.TilesConfigurer;
+import org.springframework.web.servlet.view.tiles3.TilesViewResolver;
+
+import edu.mondragon.controller.SpringController;
+
+/**
+ * @version v0.01
+ * @brief  	Spring MVC Configuration class. 
+ * 			For pages directory management and resources.
+ * 			(check on MUdle: Spring MVC Hello World example)
+ * @see		SpringController and WebInitializer
+ * @date	Creation: 12/02/19
+ * @date	Update: "Tiles" 12/04/19
+ * @author 	Loredi Altzibar
+ *
+ */
+
+@EnableWebMvc
+@Configuration
+@ComponentScan({ "edu.mondragon" })
+public class WebMvcConfig implements WebMvcConfigurer {
+
+	/* ------------------------ PATH RESOLVERS ---------------------------*/
+	
+	/**
+	 * @brief	Path resolver for resources (images, .css, .js, ...)
+	 */
+	@Override
+	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+		registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
+	}
+	
+	/**
+	 * @brief	Path resolver for tiles
+	 * @return	TilesConfigurer (default)
+	 */
+	@Bean
+	public TilesConfigurer tilesConfigurer() {
+        TilesConfigurer tilesConfigurer = new TilesConfigurer();
+        tilesConfigurer.setDefinitions("/WEB-INF/tiles/tiles.xml");
+        tilesConfigurer.setCheckRefresh(true);
+        
+        return tilesConfigurer;
+    }
+	
+	/**
+	 * @brief	Hook for tiles path resolver
+	 * @return	ViewResolver (default)
+	 */
+	@Bean
+    public ViewResolver tilesViewResolver() {
+        return new TilesViewResolver();
+    }
+	
+	@Bean(name = "localeResolver")
+    public LocaleResolver getLocaleResolver()  {
+		SessionLocaleResolver slr = new SessionLocaleResolver();
+	    slr.setDefaultLocale(Locale.UK);
+	    return slr;
+    } 
+     
+    @Bean(name = "messageSource")
+    public MessageSource getMessageResource()  {
+        ReloadableResourceBundleMessageSource messageResource= new ReloadableResourceBundleMessageSource();
+         
+        // Read i18n/messages_xxx.properties file.
+        // For example: i18n/messages_en.properties
+        messageResource.setBasename("classpath:locale_language/messages");
+        messageResource.setDefaultEncoding("UTF-8");
+        return messageResource;
+    }
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        LocaleChangeInterceptor localeInterceptor = new LocaleChangeInterceptor();
+        localeInterceptor.setParamName("lang");
+        registry.addInterceptor(localeInterceptor).addPathPatterns("/*");
+    }
+}

@@ -1,0 +1,39 @@
+:root {
+	/*--SHAPES--*/
+	--button-radius: 10px 10px 10px 10px;
+	--box-shadow: 0px 0px 7px 1px rgba(136,136,136,1);
+	--button-shadow: 0px 0px 10px 0px rgba(105, 88, 95, 1);
+	
+	/*--COLORS--*/
+	--black-dark: #222931;
+	--black-light: #393d46;
+	--cyan-pastel: #4ecda4;
+	--white-light: #f0edee;
+	
+	--purple-pastel: #c9b6e4;
+	
+	/*--FONTS--*/
+	--font-simple: 'Tomorrow', sans-serif;
+}
+
+#gameView {
+	display: flex;
+}
+
+.player {
+	flex: 1 1 auto;
+}
+
+.player.local canvas#tetris {
+	border-color: var(--cyan-pastel);
+}
+
+canvas#tetris {
+	border: solid .2em #707070;
+	height: 80vh;
+}
+
+.score {
+	font-size: 2em;
+	text-align: center;
+}

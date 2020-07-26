@@ -1,0 +1,239 @@
+package edu.mondragon.object;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import edu.mondragon.user.model.User;
+
+/**
+ * @brief	LobbyGroup class. Identifies the group of users inside a single lobby
+ * @author 	Loredi
+ *
+ */
+public class LobbyGroup {
+	
+	private final Logger logger = LoggerFactory.getLogger(this.getClass());
+	
+	private List<Player> playersList;
+	private Player owner;
+	private String title;
+	private Integer lobbyId;
+	private Integer gameId;
+	private Integer count;
+	private Integer playerLimit;
+	private boolean full;
+	private Integer winnerId;
+	private List<Question> questionList;
+	
+	/**
+	 * @brief	Constructor
+	 * 			First we create a Player object with user info.
+	 * 			Remember we don't want to store personal information in application store to be available to everyone.
+	 */
+	public LobbyGroup(User user, String title, Integer lobbyId, Integer gameId, Integer playerLimit) {
+		Player player = new Player(user.getId(), user.getUserName());
+		this.playersList = new ArrayList<>();
+		this.owner = player;
+		this.title = title;
+		this.lobbyId = lobbyId;
+		this.gameId = gameId;
+		this.count = 0;
+		this.playerLimit = playerLimit;
+		this.full = false;
+		this.winnerId = 0;
+		this.questionList = loadRandomQuestions(5);
+	}
+	
+	/**
+	 * @brief	Adds player to list 
+	 * 			1. Check if user is already inside
+	 * 			1.1. Add user to the list
+	 * 			1.2. Increment counter
+	 * @param 	user
+	 */
+	public void playerJoins(User user) {
+		Player player = new Player(user.getId(), user.getUserName());
+		playersList.add(player);
+		this.count++;
+		if (this.count == this.playerLimit) {
+			this.full = true;
+		}
+	}
+	
+	/**
+	 * @brief	Removes player from list
+	 * 			1. Checks if player is not the only one in the list (not the last one leaving the lobby)
+	 * 			1.1. Pass ownership to the first player in the list
+	 * 			2. Remove player from list
+	 * 			3. Decrement counter
+	 * @param 	user
+	 */
+	public void playerLeaves(User user) {
+		Player player = getPlayerInfoByUserId(user.getId());
+		if (getCount() > 1) {
+			playersList.remove(player);
+			this.owner = this.playersList.get(0);
+		} else playersList.remove(player);
+		this.count--;
+	}
+	
+	/**
+	 * @brief	Removes player from list
+	 * 			1. Iterate through all players
+	 * 			2. Find needed player by user ID
+	 * 			3. Call player's updateScore
+	 * @param 	user ID
+	 * @param	score
+	 */
+	public void updateScore(int userId, int score) {
+		for (Player p : this.playersList) {
+			if (p.getId() == userId) {
+				p.setScore(score);
+			}
+		}
+	}
+	
+	/**
+	 * @brief	Checks if user is the winner using user ID
+	 * @param 	user ID
+	 */
+	public boolean isWinnerByUserId(int userId) {
+		boolean valid = false;
+		if (this.winnerId == userId) {
+			valid = true;
+		}
+		return valid;
+	}
+	
+	/**
+	 * @brief	Get Player object by User object
+	 * 			1. Iterate through all players
+	 * 			2. Find the needed player by user ID
+	 * 			3. return player
+	 * @param 	user
+	 * @return	player
+	 */
+	public Player getPlayerInfoByUserId(int userId) {
+		Player player = null;
+		for (Player p : this.playersList) {
+			if (p.getId() == userId) {
+				player = p;
+			}
+		}
+		return player;
+	}
+	
+	/**	SETTERS - GETTERS **/
+	public Integer getCount() {
+		return count;
+	}
+	
+	public boolean isEmpty() {
+		return getCount() == 0 ? true : false;
+	}
+	
+	public Integer getLobbyId() {
+		return lobbyId;
+	}
+	
+	public Integer getGameId() {
+		return gameId;
+	}
+	
+	public Player getOwnerPlayer() {
+		return owner;
+	}
+	
+	public List<Player> getPlayersList() {
+		return playersList;
+	}
+
+	public boolean isFull() {
+		return full;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	
+	public Integer getWinnerId() {
+		return winnerId;
+	}
+
+	public void setWinnerId(Integer userId) {
+		this.winnerId = userId;
+	}
+
+	public List<Question> getQuestionList() {
+		return questionList;
+	}
+
+	public void setQuestionList(List<Question> questionList) {
+		this.questionList = questionList;
+	}
+
+	public List<Question> loadRandomQuestions(int numberOfQuestions) {
+        List<Question> allQuestions = null;
+        List<Question> pickedQuestions = null;
+		
+		allQuestions = Questions.loadAllQuestions();
+		
+		// Pick here x random number of questions into new list
+		pickedQuestions = pickRandomQuestions(numberOfQuestions, allQuestions);
+		
+        return pickedQuestions;
+	}
+
+	private List<Question> pickRandomQuestions(int numberOfQuestions, List<Question> allQuestions) {
+		List<Question> questionsType = new ArrayList<>();
+		List<Question> randomXQuestions = null;
+		String type = "";
+		
+		// Check game type (true/false or question/answer)
+		if (this.gameId == 1) {
+			type = "boolean";
+
+		} else if (this.gameId == 2) {
+			type = "multiple";
+		}
+		else if(this.gameId == 3){
+			type = "mix";
+		}
+		else type = "sort";
+		
+		if (type.equals("mix")) {
+			for (Question q : allQuestions) {
+				if (q.getType().equals("boolean") || q.getType().equals("multiple")) {
+					questionsType.add(q);
+				}
+			}
+		} else {
+			// Populate the array with question type
+			for (Question q : allQuestions) {
+				if (q.getType().equals(type)) {
+					questionsType.add(q);
+				}
+			}
+
+		} 
+
+		
+		// Shuffle all questions
+		Collections.shuffle(questionsType);
+		
+		// Choose first x number of questions
+		randomXQuestions = questionsType.subList(0, numberOfQuestions);
+
+		return randomXQuestions;
+		
+	}
+
+}

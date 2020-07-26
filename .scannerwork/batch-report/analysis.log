@@ -1,0 +1,147 @@
+Environment variables:
+  - =::=::\
+  - =C:=C:\Users\aitor\Desktop\Web\WS-Exercise\loglas_project
+  - ALLUSERSPROFILE=C:\ProgramData
+  - APPDATA=C:\Users\aitor\AppData\Roaming
+  - COMPUTERNAME=AITOR-MSI
+  - ComSpec=C:\WINDOWS\system32\cmd.exe
+  - CommonProgramFiles=C:\Program Files\Common Files
+  - CommonProgramFiles(x86)=C:\Program Files (x86)\Common Files
+  - CommonProgramW6432=C:\Program Files\Common Files
+  - DriverData=C:\Windows\System32\Drivers\DriverData
+  - ERROR_CODE=0
+  - FPS_BROWSER_APP_PROFILE_STRING=Internet Explorer
+  - FPS_BROWSER_USER_PROFILE_STRING=Default
+  - HOMEDRIVE=C:
+  - HOMEPATH=\Users\aitor
+  - INTEL_DEV_REDIST=C:\Program Files (x86)\Common Files\Intel\Shared Libraries\
+  - JAVA_EXEC="C:\Users\aitor\Desktop\Software\sonar-scanner-3.0.3.778-windows\bin\..\jre\bin\java.exe"
+  - JAVA_HOME=C:\Users\aitor\Desktop\Software\sonar-scanner-3.0.3.778-windows\bin\..\jre
+  - KMP_DUPLICATE_LIB_OK=TRUE
+  - LOCALAPPDATA=C:\Users\aitor\AppData\Local
+  - LOGONSERVER=\\AITOR-MSI
+  - MIC_LD_LIBRARY_PATH=C:\Program Files (x86)\Common Files\Intel\Shared Libraries\compiler\lib\mic
+  - MKL_SERIAL=YES
+  - NUMBER_OF_PROCESSORS=8
+  - OS=Windows_NT
+  - OneDrive=C:\Users\aitor\OneDrive
+  - OneDriveConsumer=C:\Users\aitor\OneDrive
+  - PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+  - PROCESSOR_ARCHITECTURE=AMD64
+  - PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 158 Stepping 9, GenuineIntel
+  - PROCESSOR_LEVEL=6
+  - PROCESSOR_REVISION=9e09
+  - PROJECT_HOME=C:\Users\aitor\Desktop\Web\WS-Exercise\loglas_project
+  - PROMPT=$P$G
+  - PSModulePath=C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
+  - PT7HOME=I:\Cisco Packet Tracer 7.1\Cisco Packet Tracer 7.1.1
+  - PUBLIC=C:\Users\Public
+  - Path=C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;D:\runtime\win64;D:\bin;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\PuTTY\;C:\MinGW\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;I:\MathLab\SOURCE\bin;C:\Program Files\TortoiseGit\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\aitor\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Users\aitor\AppData\Local\GitHubDesktop\bin;C:\Users\aitor\AppData\Local\Microsoft\WindowsApps;C:\Users\aitor\Desktop\Software\sonar-scanner-3.0.3.778-windows\bin;C:\Users\aitor\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\aitor\Desktop\Software\apache-maven-3.6.2\bin;C:\Users\aitor\AppData\Roaming\npm
+  - ProgramData=C:\ProgramData
+  - ProgramFiles=C:\Program Files
+  - ProgramFiles(x86)=C:\Program Files (x86)
+  - ProgramW6432=C:\Program Files
+  - QT_DEVICE_PIXEL_RATIO=auto
+  - SESSIONNAME=Console
+  - SONAR_SCANNER_HOME=C:\Users\aitor\Desktop\Software\sonar-scanner-3.0.3.778-windows\bin\..
+  - SystemDrive=C:
+  - SystemRoot=C:\WINDOWS
+  - TEMP=C:\Users\aitor\AppData\Local\Temp
+  - TMP=C:\Users\aitor\AppData\Local\Temp
+  - USERDOMAIN=AITOR-MSI
+  - USERDOMAIN_ROAMINGPROFILE=AITOR-MSI
+  - USERNAME=Aitor
+  - USERPROFILE=C:\Users\aitor
+  - VBOX_MSI_INSTALL_PATH=C:\Program Files\Oracle\VirtualBox\
+  - VS150COMCOMNTOOLS=C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\Tools\
+  - scriptdir=C:\Users\aitor\Desktop\Software\sonar-scanner-3.0.3.778-windows\bin
+  - use_embedded_jre=true
+  - windir=C:\WINDOWS
+System properties:
+  - awt.toolkit=sun.awt.windows.WToolkit
+  - file.encoding=Cp1252
+  - file.encoding.pkg=sun.io
+  - file.separator=\
+  - java.awt.graphicsenv=sun.awt.Win32GraphicsEnvironment
+  - java.awt.headless=true
+  - java.awt.printerjob=sun.awt.windows.WPrinterJob
+  - java.class.path=C:\Users\aitor\Desktop\Software\sonar-scanner-3.0.3.778-windows\bin\..\lib\sonar-scanner-cli-3.0.3.778.jar
+  - java.class.version=52.0
+  - java.endorsed.dirs=C:\Users\aitor\Desktop\Software\sonar-scanner-3.0.3.778-windows\jre\lib\endorsed
+  - java.ext.dirs=C:\Users\aitor\Desktop\Software\sonar-scanner-3.0.3.778-windows\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext
+  - java.home=C:\Users\aitor\Desktop\Software\sonar-scanner-3.0.3.778-windows\jre
+  - java.io.tmpdir=C:\Users\aitor\AppData\Local\Temp\
+  - java.library.path=C:\Users\aitor\Desktop\Software\sonar-scanner-3.0.3.778-windows\jre\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;D:\runtime\win64;D:\bin;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\PuTTY\;C:\MinGW\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;I:\MathLab\SOURCE\bin;C:\Program Files\TortoiseGit\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\aitor\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Users\aitor\AppData\Local\GitHubDesktop\bin;C:\Users\aitor\AppData\Local\Microsoft\WindowsApps;C:\Users\aitor\Desktop\Software\sonar-scanner-3.0.3.778-windows\bin;C:\Users\aitor\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\aitor\Desktop\Software\apache-maven-3.6.2\bin;C:\Users\aitor\AppData\Roaming\npm;.
+  - java.runtime.name=Java(TM) SE Runtime Environment
+  - java.runtime.version=1.8.0_121-b13
+  - java.specification.name=Java Platform API Specification
+  - java.specification.vendor=Oracle Corporation
+  - java.specification.version=1.8
+  - java.vendor=Oracle Corporation
+  - java.vendor.url=http://java.oracle.com/
+  - java.vendor.url.bug=http://bugreport.sun.com/bugreport/
+  - java.version=1.8.0_121
+  - java.vm.info=mixed mode
+  - java.vm.name=Java HotSpot(TM) 64-Bit Server VM
+  - java.vm.specification.name=Java Virtual Machine Specification
+  - java.vm.specification.vendor=Oracle Corporation
+  - java.vm.specification.version=1.8
+  - java.vm.vendor=Oracle Corporation
+  - java.vm.version=25.121-b13
+  - line.separator=
+
+  - os.arch=amd64
+  - os.name=Windows 10
+  - os.version=10.0
+  - path.separator=;
+  - project.home=C:\Users\aitor\Desktop\Web\WS-Exercise\loglas_project
+  - scanner.home=C:\Users\aitor\Desktop\Software\sonar-scanner-3.0.3.778-windows\bin\..
+  - sun.arch.data.model=64
+  - sun.boot.class.path=C:\Users\aitor\Desktop\Software\sonar-scanner-3.0.3.778-windows\jre\lib\resources.jar;C:\Users\aitor\Desktop\Software\sonar-scanner-3.0.3.778-windows\jre\lib\rt.jar;C:\Users\aitor\Desktop\Software\sonar-scanner-3.0.3.778-windows\jre\lib\sunrsasign.jar;C:\Users\aitor\Desktop\Software\sonar-scanner-3.0.3.778-windows\jre\lib\jsse.jar;C:\Users\aitor\Desktop\Software\sonar-scanner-3.0.3.778-windows\jre\lib\jce.jar;C:\Users\aitor\Desktop\Software\sonar-scanner-3.0.3.778-windows\jre\lib\charsets.jar;C:\Users\aitor\Desktop\Software\sonar-scanner-3.0.3.778-windows\jre\lib\jfr.jar;C:\Users\aitor\Desktop\Software\sonar-scanner-3.0.3.778-windows\jre\classes
+  - sun.boot.library.path=C:\Users\aitor\Desktop\Software\sonar-scanner-3.0.3.778-windows\jre\bin
+  - sun.cpu.endian=little
+  - sun.cpu.isalist=amd64
+  - sun.desktop=windows
+  - sun.io.unicode.encoding=UnicodeLittle
+  - sun.java.command=org.sonarsource.scanner.cli.Main -X
+  - sun.java.launcher=SUN_STANDARD
+  - sun.jnu.encoding=Cp1252
+  - sun.management.compiler=HotSpot 64-Bit Tiered Compilers
+  - sun.os.patch.level=
+  - sun.stderr.encoding=cp850
+  - sun.stdout.encoding=cp850
+  - user.country=ES
+  - user.dir=C:\Users\aitor\Desktop\Web\WS-Exercise\loglas_project
+  - user.home=C:\Users\aitor
+  - user.language=es
+  - user.name=Aitor
+  - user.script=
+  - user.timezone=Europe/Paris
+  - user.variant=
+SonarQube plugins:
+  - C# 5.10.1.1411 (csharp)
+  - SonarPython 1.8.0.1496 (python)
+  - SonarJava 4.12.0.11033 (java)
+  - Flex 2.3 (flex)
+  - Git 1.2 (scmgit)
+  - SonarXML 1.4.3.1027 (xml)
+  - SonarPHP 2.10.0.2087 (php)
+  - SVN 1.5.0.715 (scmsvn)
+  - SonarJS 3.1.1.5128 (javascript)
+Global properties:
+  - sonar.core.id=AW05a_A_AYtpMtfFLyLE
+  - sonar.core.startTime=2020-01-22T13:02:09+0100
+Settings for module: org.sonarqube:LOGLAS
+  - sonar.exclusions=src/main/webapp/resources/core/js/jquery-3.2.1.js
+  - sonar.flex.cobertura.reportPath=coverage-report/coverage-cobertua-flex.xml
+  - sonar.jacoco.reportPaths=
+  - sonar.java.binaries=src
+  - sonar.junit.reportPaths=target/surefire-reports
+  - sonar.projectBaseDir=C:\Users\aitor\Desktop\Web\WS-Exercise\loglas_project
+  - sonar.projectKey=org.sonarqube:LOGLAS
+  - sonar.projectName=LOGLAS
+  - sonar.projectVersion=1.0
+  - sonar.sourceEncoding=UTF-8
+  - sonar.sources=src/main/java
+  - sonar.verbose=true
+  - sonar.working.directory=C:\Users\aitor\Desktop\Web\WS-Exercise\loglas_project\.scannerwork

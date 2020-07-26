@@ -1,0 +1,6 @@
+public class Player {
+        
+    public static synchronized void useWebSockets(Player player) {
+    	//WebSockets used by player
+    }
+}

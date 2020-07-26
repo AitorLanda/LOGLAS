@@ -1,0 +1,19 @@
+List<Player> listPlayers;
+int numPlayers;
+
+
+public void entryPlayer(Player player) throws InterruptedException {
+		
+	synchronized (this) {
+		this.numPlayers++;
+		//Player entering
+	}
+}
+	
+public void exitPlayer(Player player) {
+
+	synchronized (this) {
+		this.numPlayers--;
+		//Player exiting
+	}
+}

@@ -1,0 +1,173 @@
+package edu.mondragon.object;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.List;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+/**
+ * @brief	CRUDE Question for file (questions-answers.json)
+ * 
+ */
+public class Questions {
+	
+	/**
+	 * @brief	Static class Question
+	 * 			Writes a question list on a file
+	 * @param 	{list} allQuestions items : questions
+	 */
+	public static void writeQuestions( List<Question> allQuestions) {
+		
+		ObjectMapper mapper = new ObjectMapper();
+		
+		try {
+			mapper.writerWithDefaultPrettyPrinter()
+				.writeValue(new File("/files/questions-answers.json"), allQuestions);
+		
+		} catch (JsonProcessingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * @brief	Loads all question from question-answers.json file
+	 * @return	{list} containing Question items
+	 */
+	public static List<Question> loadAllQuestions() {		
+		
+		ObjectMapper objectMapper = new ObjectMapper();
+		List<Question> allQuestions = null;
+		
+		// Read file as input stream
+		InputStream inputStream;
+		try {
+			inputStream = new FileInputStream(new File("/files/questions-answers.json"));	
+			//inputStream = new FileInputStream(new File("/files/questions-answers.json"));			
+			// Map Input stream info as list of questions
+			allQuestions = objectMapper.readValue(inputStream, objectMapper.getTypeFactory().
+					constructCollectionType(List.class, Question.class));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return allQuestions;
+	}
+	
+	/**
+	 * @brief	Adds a question and writes to question-answers.json file
+	 * @param 	{item} Question object
+	 */
+	public static List<Question> addQuestion(Question question) throws NullPointerException{
+		int a = 0;
+		List<Question>allQuestions = loadAllQuestions();
+		for(Question q :allQuestions) {
+			if(q.getId()>a) {
+				 a = q.getId();
+			}
+		}
+		question.setId(a+1);		
+		if (checkValidQuestion(question)) {			
+			allQuestions.add(question);
+			writeQuestions(allQuestions);}
+		return allQuestions;	
+	}
+	
+	/**
+	 * @brief	Checks if a question is valid
+	 * 			- The fields must not be empty
+	 * @param 	question
+	 * @return	{boolean} valid
+	 */
+	public static boolean checkValidQuestion(Question question) {
+		boolean valid = false;
+		String type = question.getType();
+		String questionText = question.getQuestion();
+		String correct_answer = question.getCorrect_answer();
+		List<String> incorrect_answers = question.getIncorrect_answers();
+		
+		valid = checkQuestionType(type);
+		
+		// Check question and correct_answer
+		if (questionText == "" || correct_answer == "") {
+			valid = false;
+		}
+		
+		// Check incorrect_answers
+		for (String answer : incorrect_answers) {
+			if (answer == "") {
+				valid = false;
+			}
+		}
+		
+		return valid;
+	}
+	
+	/**
+	 * @brief	Checks if a question type is valid
+	 * 			- The fields must be "boolean" or "multiple"
+	 * @param 	{String} type
+	 * @return	{boolean} valid
+	 */
+	public static boolean checkQuestionType(String type) {
+		boolean valid = false;
+		
+		// Check if type
+		if (type.contentEquals("multiple") || type.contentEquals("boolean") || type.contentEquals("sort")) {
+			valid = true;
+		}
+		
+		return valid;
+	}
+	
+	/**
+	 * @brief	Updates a question.
+	 * 			Returns the list and updates the file
+	 * @param 	{Question} 
+	 * @return	{list} items: question
+	 */
+	public static List<Question> updateQuestion(Question question) {
+		List<Question> allQuestions = loadAllQuestions();
+		for(Question question2 : allQuestions) {
+			if(question.getId()==question2.getId()) {
+				question2.setCategory(question.getCategory());
+				question2.setCorrect_answer(question.getCorrect_answer());
+				question2.setDifficulty(question.getDifficulty());
+				question2.setIncorrect_answers(question.getIncorrect_answers());
+				question2.setQuestion(question.getQuestion());
+				question2.setType(question.getType());
+				
+				writeQuestions(allQuestions);
+			}
+		}
+		return allQuestions;
+	}
+	
+	/**
+	 * @brief	Deletes a question.
+	 * 			Returns the list and updates the file
+	 * @param 	{int} id
+	 * @return	{list} items: question
+	 */
+	public static List<Question> deleteQuestion(int id) {
+		List<Question> allQuestions = loadAllQuestions();
+		Question a = null;
+		for(Question q :allQuestions) {
+			if(q.getId()==id) {
+				 a = q;
+			}
+		}
+		allQuestions.remove(a);
+		writeQuestions(allQuestions);
+		return allQuestions;
+	}
+	
+}

@@ -1,0 +1,1 @@
+@src/main/java/edu/mondragon/lobbyregtime/model/LobbyRegtime.java 2javaXX

@@ -1,0 +1,1 @@
+.Bsrc/main/java/edu/mondragon/playerscore/dao/PlayerScoreDaoImp.java 2javaX6

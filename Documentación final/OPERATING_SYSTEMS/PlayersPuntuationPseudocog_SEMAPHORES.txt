@@ -1,0 +1,41 @@
+Semaphore writePuntuation(1), mutex(1), entry(1)
+int nViewers;
+int cont;
+
+void anadirPuntos(Player player){
+	wait(entry);
+	wait(writePuntuation);
+	
+	++cont;
+	
+	if(cont==1) anadir(50);
+	if(cont==2) anadir(30);
+	if(cont==3) anadir(10);
+	if(cont==7) cont=0;
+	
+	signal(writePuntuation);
+	signal(entry;
+	
+	}
+	
+void mostrarPuntos(Viewer viewer){
+
+	wait(entry);
+	wait(mutex);
+	
+	nViewers++;
+	
+	if(nViewers==1) wait(writePuntuation);
+	signal(mutex);
+	
+	//printf
+	
+	wait(mutex);
+	nViewers--;
+	
+	if(nViewers==0) signal(writePuntuation);
+	
+	signal(mutex);
+	signal(entry);
+
+	}
